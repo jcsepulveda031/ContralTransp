@@ -1,0 +1,15 @@
+.estado-badge {
+    display: inline-block;
+    padding: 0.45em 1.2em;
+    font-size: 1em;
+    font-weight: 600;
+    color: #fff;
+    border-radius: 1.5em;
+    min-width: 80px;
+    text-align: center;
+    background: #6b7280; /* color por defecto, se sobrescribe en línea */
+    letter-spacing: 0.5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    margin: 0 auto;
+    transition: background 0.2s, color 0.2s;
+} 

@@ -1,0 +1,382 @@
+/* Estilos base - consistentes con la app */
+.App {
+  display: flex;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
+  padding: 0;
+  margin-left: 80px;
+  transition: margin-left 0.3s ease;
+  width: calc(100% - 80px);
+}
+
+.content.shift {
+  margin-left: 240px;
+  width: calc(100% - 240px);
+}
+
+/* Contenedor principal de vehículos */
+.vehiculo-table {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+}
+
+/* Mensaje de error */
+.error-message {
+  color: #dc3545;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 10px 15px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+/* Barra de búsqueda y botón */
+.search-add-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  padding: 0 10px;
+  flex-wrap: wrap;
+  gap: 15px;
+  position: relative;
+}
+
+.search-input {
+  flex: 1;
+  padding: 12px 16px 12px 40px;
+  border: 1.5px solid #bbb;
+  border-radius: 6px;
+  font-size: 15px;
+  min-width: 250px;
+  background: #fff;
+  color: #222;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  position: relative;
+  z-index: 1;
+}
+
+.search-input::placeholder {
+  color: #888;
+  opacity: 1;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #1976d2;
+  box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.13);
+  background: #fff;
+}
+
+/* Ícono de búsqueda dentro del input */
+.search-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #a3542f;
+  font-size: 1.2em;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.add-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.add-button:hover, .add-button:focus {
+  background-color: #218838;
+}
+
+/* Estilos de la tabla */
+.vehiculo-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  table-layout: fixed;
+}
+
+.vehiculo-table th {
+  background-color: #f8f9fa;
+  padding: 12px 15px;
+  text-align: left;
+  font-weight: 600;
+  color: #333;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.vehiculo-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #e0e0e0;
+  vertical-align: middle;
+}
+
+.vehiculo-table tr:hover {
+  background-color: #f5f5f5;
+}
+
+/* Ancho de columnas específicas */
+.vehiculo-table th:nth-child(1),
+.vehiculo-table td:nth-child(1) {
+  width: 20%; /* Marca */
+}
+
+.vehiculo-table th:nth-child(2),
+.vehiculo-table td:nth-child(2) {
+  width: 20%; /* Modelo */
+}
+
+.vehiculo-table th:nth-child(3),
+.vehiculo-table td:nth-child(3) {
+  width: 10%; /* Año */
+}
+
+.vehiculo-table th:nth-child(4),
+.vehiculo-table td:nth-child(4) {
+  width: 15%; /* Color */
+}
+
+.vehiculo-table th:nth-child(5),
+.vehiculo-table td:nth-child(5) {
+  width: 15%; /* Placa */
+}
+
+.vehiculo-table th:nth-child(6),
+.vehiculo-table td:nth-child(6) {
+  width: 20%; /* Acciones */
+}
+
+/* Botones de acción */
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* --- Botones de acción --- */
+.icon-button {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+  max-width: 40px;
+  max-height: 40px;
+  padding: 0;
+  margin: 0 6px 0 0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  box-shadow: none;
+  font-size: 1.3rem;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.icon-button .icon {
+  font-size: 1.4em;
+  margin: 0;
+}
+
+.icon-button.edit-button {
+  background: #f5e9dc;
+  color: #a3542f;
+}
+.icon-button.edit-button:hover, .icon-button.edit-button:focus {
+  background: #e38b29;
+  color: #fff;
+  outline: 2px solid #a3542f;
+}
+
+.icon-button.delete-button {
+  background: #fdecea;
+  color: #c0392b;
+}
+.icon-button.delete-button:hover, .icon-button.delete-button:focus {
+  background: #e57373;
+  color: #fff;
+  outline: 2px solid #c0392b;
+}
+
+.almacen-table td:last-child {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 100px;
+}
+
+/* --- Tabla --- */
+.almacen-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(163, 84, 47, 0.07);
+}
+
+.almacen-table th, .almacen-table td {
+  padding: 0.95rem 1.1rem;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.almacen-table th {
+  background: #f5e9dc;
+  color: #a3542f;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  font-size: 1.05rem;
+}
+
+.almacen-table tr:hover {
+  background: #fdf6f0;
+}
+
+/* Modales - estilos consistentes */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  animation: popIn 0.4s ease-out;
+  max-width: 500px;
+  width: 90%;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .content, .content.shift {
+    margin-left: 0;
+    width: 100%;
+  }
+  
+  .vehiculo-table {
+    margin: 15px;
+    padding: 15px;
+  }
+  
+  .search-add-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .search-input {
+    min-width: 100%;
+    padding-left: 38px;
+  }
+  
+  .add-button {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .vehiculo-table table {
+    display: block;
+    overflow-x: auto;
+  }
+  
+  .actions {
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .almacen-table {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .vehiculo-table {
+    margin: 10px;
+    border-radius: 0;
+  }
+  
+  .vehiculo-table th, 
+  .vehiculo-table td {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+  
+  .add-button {
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+}
+
+.button-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #333 !important;
+  margin-left: 4px;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #f5e9dc;
+  color: #333;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 13px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  z-index: 10;
+}
+
+.button-wrapper:hover .tooltip,
+.button-wrapper:focus-within .tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(-4px);
+}

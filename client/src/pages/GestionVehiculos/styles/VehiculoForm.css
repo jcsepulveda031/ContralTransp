@@ -1,0 +1,191 @@
+/* Variables de color para consistencia */
+:root {
+  --primary-color: #2e43bb;
+  --primary-hover: #062ba3;
+  --error-color: #e74c3c;
+  --error-bg: #ffeeee;
+  --text-dark: #2c3e50;
+  --text-medium: #34495e;
+  --text-light: #7f8c8d;
+  --border-color: #ecf0f1;
+  --border-radius: 8px;
+  --transition: all 0.3s ease;
+}
+
+/* Estructura del modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modal-container {
+  background-color: white;
+  border-radius: var(--border-radius);
+  width: 100%;
+  max-width: 500px;
+  padding: 25px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  animation: modalFadeIn 0.3s ease-out;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-container h2 {
+  margin: 0 0 20px 0;
+  color: var(--text-dark);
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 1.5rem;
+}
+
+/* Estructura del formulario */
+.vehiculo-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: var(--text-medium);
+  font-size: 0.875rem;
+}
+
+/* Campos de formulario */
+.form-control {
+  padding: 12px 15px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  transition: var(--transition);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(46, 67, 187, 0.2);
+}
+
+/* Estilos específicos para la placa */
+.placa-display {
+  padding: 12px 15px;
+  background-color: #f8f9fa;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  font-weight: 500;
+  color: var(--text-medium);
+}
+
+/* Manejo de errores */
+.has-error .form-control,
+.has-error .placa-display {
+  border-color: var(--error-color);
+}
+
+.error-message {
+  color: var(--error-color);
+  font-size: 0.8125rem;
+  margin-top: 4px;
+}
+
+.form-error-message {
+  color: var(--error-color);
+  background-color: var(--error-bg);
+  padding: 12px;
+  border-radius: var(--border-radius);
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+/* Botones */
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-color);
+}
+
+.btn {
+  padding: 12px 25px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: 500;
+  transition: var(--transition);
+  font-size: 1rem;
+  border: none;
+}
+
+.btn-cancel {
+  background-color: #f5f7fa;
+  border: 1px solid var(--border-color);
+  color: var(--text-medium);
+}
+
+.btn-cancel:hover {
+  background-color: #eaecee;
+}
+
+.btn-submit {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn-submit:hover {
+  background-color: var(--primary-hover);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .modal-container {
+    padding: 20px;
+  }
+  
+  .modal-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .btn {
+    width: 100%;
+  }
+}
+
+/* Mejoras de accesibilidad */
+.form-control:focus-visible,
+.btn:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Transiciones suaves */
+.modal-container,
+.form-control,
+.btn,
+.placa-display {
+  transition: var(--transition);
+}

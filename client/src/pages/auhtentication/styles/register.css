@@ -1,0 +1,237 @@
+/* register.css */
+
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f6f8fc, #e9ecef);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px;
+}
+
+.register-form {
+    background: rgba(255, 255, 255, 0.98);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.register-form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #d87b11, #f0a500);
+}
+
+.register-form h1 {
+    margin-bottom: 30px;
+    font-size: 32px;
+    color: #2c3e50;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.register-form h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #d87b11, #f0a500);
+    border-radius: 2px;
+}
+
+.register-form input,
+.register-form select {
+    width: 100%;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background-color: #f8f9fa;
+    color: #2c3e50;
+}
+
+.register-form input::placeholder {
+    color: #adb5bd;
+    font-size: 15px;
+}
+
+.register-form input:focus,
+.register-form select:focus {
+    border-color: #d87b11;
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgba(216, 123, 17, 0.1);
+    outline: none;
+}
+
+.register-form select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23d87b11' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 16px;
+    padding-right: 45px;
+    cursor: pointer;
+}
+
+.register-form button {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(90deg, #d87b11, #f0a500);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.register-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(216, 123, 17, 0.3);
+}
+
+.register-form button:active {
+    transform: translateY(0);
+}
+
+.register-form button:disabled {
+    background: #e9ecef;
+    color: #adb5bd;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.error-message {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #fff5f5;
+    border-left: 4px solid #e53e3e;
+    border-radius: 8px;
+    color: #c53030;
+    font-size: 14px;
+    animation: slideIn 0.3s ease;
+}
+
+.error-message svg {
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+
+.error-field {
+    border-color: #e53e3e !important;
+    background-color: #fff5f5 !important;
+}
+
+.error-field:focus {
+    box-shadow: 0 0 0 4px rgba(229, 62, 62, 0.1) !important;
+}
+
+.login-links {
+    margin-top: 25px;
+    color: #6c757d;
+    font-size: 15px;
+}
+
+.login-links a {
+    color: #d87b11;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.login-links a:hover {
+    color: #f0a500;
+    text-decoration: underline;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .register-form {
+        padding: 30px;
+        max-width: 100%;
+        margin: 20px;
+    }
+
+    .register-form h1 {
+        font-size: 28px;
+    }
+
+    .register-form input,
+    .register-form select {
+        padding: 14px 18px;
+        font-size: 15px;
+    }
+
+    .register-form button {
+        padding: 14px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .register-container {
+        padding: 15px;
+    }
+
+    .register-form {
+        padding: 25px;
+    }
+
+    .register-form h1 {
+        font-size: 24px;
+        margin-bottom: 25px;
+    }
+
+    .register-form input,
+    .register-form select {
+        padding: 12px 16px;
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+    .register-form button {
+        padding: 12px;
+        font-size: 15px;
+    }
+
+    .error-message {
+        padding: 12px;
+        font-size: 13px;
+    }
+}

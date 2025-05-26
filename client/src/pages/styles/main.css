@@ -1,0 +1,243 @@
+.procesos-container {
+    max-width: 1400px;
+    margin: 6rem auto;
+    padding: 4rem 2rem;
+    background: rgba(255,255,255,0.92);
+    border-radius: 2.5rem;
+    box-shadow: 0 12px 40px rgba(163, 84, 47, 0.13), 0 1.5px 8px rgba(60,60,120,0.10);
+    border: 1.5px solid rgba(200,200,220,0.18);
+    backdrop-filter: blur(8px);
+    transition: box-shadow 0.3s, background 0.3s;
+}
+
+.procesos-titulo {
+    text-align: center;
+    color: #181c32;
+    margin-bottom: 1.2rem;
+    font-size: 2.7rem;
+    font-weight: 900;
+    letter-spacing: -1px;
+    text-shadow: 0 2px 8px rgba(163, 84, 47, 0.07);
+}
+
+.procesos-subtitulo {
+    text-align: center;
+    color: #4b5563;
+    margin-bottom: 2.5rem;
+    font-size: 1.25rem;
+    font-weight: 500;
+    opacity: 0.92;
+}
+
+.procesos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2.2rem;
+    padding: 1.5rem 0;
+}
+
+.proceso-card {
+    background: rgba(255,255,255,0.88);
+    border-radius: 1.7rem;
+    padding: 2.2rem 1.2rem 1.7rem 1.2rem;
+    box-shadow: 0 6px 28px rgba(163, 84, 47, 0.10), 0 1.5px 8px rgba(60,60,120,0.10);
+    border: 1.5px solid #f5e9dc;
+    transition: transform 0.22s cubic-bezier(.4,2,.6,1), box-shadow 0.22s, border 0.22s, background 0.22s;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 240px;
+    color: #23272f;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.proceso-card:hover {
+    transform: translateY(-10px) scale(1.045);
+    box-shadow: 0 16px 48px rgba(227, 139, 41, 0.13), 0 8px 32px rgba(60,60,120,0.16);
+    border-color: #e38b29;
+    background: #fffbe9;
+    z-index: 2;
+}
+
+.proceso-icon {
+    font-size: 2.7rem;
+    margin-bottom: 1.1rem;
+    filter: drop-shadow(0 2px 8px rgba(37,99,235,0.08));
+    transition: transform 0.22s cubic-bezier(.4,2,.6,1);
+    background: linear-gradient(135deg, #f5e9dc 60%, #fffbe9 100%);
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 2px 8px rgba(163, 84, 47, 0.07);
+}
+
+.proceso-card:hover .proceso-icon {
+    transform: scale(1.18) rotate(-6deg);
+    background: linear-gradient(135deg, #e38b29 60%, #fffbe9 100%);
+}
+
+.proceso-title {
+    font-size: 1.45rem;
+    font-weight: 800;
+    color: #181c32;
+    margin-bottom: 0.7rem;
+    letter-spacing: -0.5px;
+    text-shadow: 0 1px 4px rgba(163, 84, 47, 0.06);
+}
+
+.proceso-description {
+    font-size: 1.08rem;
+    color: #4b5563;
+    margin-bottom: 1.2rem;
+    opacity: 0.97;
+    font-weight: 500;
+}
+
+.proceso-link {
+    display: inline-block;
+    margin-top: auto;
+    padding: 0.7rem 1.6rem;
+    background: linear-gradient(90deg, #e38b29 60%, #f1ad2f 100%);
+    color: #fff;
+    border-radius: 0.9rem;
+    font-weight: 700;
+    font-size: 1.08rem;
+    box-shadow: 0 2px 8px rgba(227, 139, 41, 0.08);
+    transition: background 0.18s, transform 0.18s, box-shadow 0.18s;
+    text-decoration: none;
+    letter-spacing: 0.1px;
+    border: none;
+    outline: none;
+}
+
+.proceso-link:focus {
+    outline: 2.5px solid #e38b29;
+    outline-offset: 2px;
+}
+
+.proceso-card:hover .proceso-link {
+    background: linear-gradient(90deg, #eecf46 60%, #e38b29 100%);
+    transform: scale(1.07);
+    box-shadow: 0 4px 16px rgba(40,167,69,0.13);
+}
+
+@media (min-width: 1200px) {
+    .procesos-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+@media (max-width: 1024px) {
+    .procesos-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (max-width: 768px) {
+    .procesos-container {
+        margin: 2rem auto;
+        padding: 2.2rem 0.7rem;
+    }
+    .procesos-grid {
+        gap: 1.1rem;
+    }
+    .proceso-card {
+        padding: 1.3rem 0.7rem 1.1rem 0.7rem;
+        min-height: 180px;
+    }
+}
+@media (max-width: 480px) {
+    .procesos-grid {
+        grid-template-columns: 1fr;
+    }
+    .procesos-titulo {
+        font-size: 1.5rem;
+    }
+    .proceso-title {
+        font-size: 1.1rem;
+    }
+}
+
+body {
+    background: linear-gradient(135deg, #f5e9dc 0%, #fffbe9 50%, #e2e8f0 100%);
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.App {
+    display: flex;
+    min-height: 100vh;
+}
+
+div.defoult-container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background: none;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    transition: color 0.3s ease;
+}
+
+h1:hover {
+    color: #28a745;
+}
+
+/* Línea sutil entre filas */
+.procesos-grid::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.07);
+    margin: 10px 0;
+}
+
+.dashboard-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.main-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.subtitle {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #1a202c;
+}
+
+.dashboard-description {
+  font-size: 1.1rem;
+  color: #222;
+  max-width: 700px;
+}

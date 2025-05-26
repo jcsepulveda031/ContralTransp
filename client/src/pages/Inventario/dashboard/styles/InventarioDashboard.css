@@ -1,0 +1,44 @@
+.inventario-dashboard {
+  padding: 24px;
+}
+
+.stat-card {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  height: 100%;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.alert-card {
+  transition: all 0.2s ease-in-out;
+  border-left: 4px solid;
+}
+
+.alert-card.warning {
+  border-left-color: #f59e0b;
+  background-color: rgba(245, 158, 11, 0.1);
+}
+
+.alert-card.error {
+  border-left-color: #ef4444;
+  background-color: rgba(239, 68, 68, 0.1);
+}
+
+.alert-card:hover {
+  transform: translateX(4px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .inventario-dashboard {
+    padding: 16px;
+  }
+
+  .stat-card {
+    margin-bottom: 16px;
+  }
+} 

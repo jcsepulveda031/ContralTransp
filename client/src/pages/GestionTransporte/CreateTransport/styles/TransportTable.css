@@ -1,0 +1,618 @@
+/* Estilos base */
+.App {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Contenido principal - siempre ancho completo */
+.content {
+  flex: 1;
+  padding: 0;
+  margin-left: 80px; /* Ancho del navbar cerrado */
+  transition: margin-left 0.3s ease;
+  width: calc(100% - 80px);
+}
+
+.content.shift {
+  margin-left: 240px; /* Ancho del navbar abierto */
+  width: calc(100% - 240px);
+}
+
+/* Contenedor de tabla - diseño fijo como en la imagen */
+.table-container {
+  padding: 20px;
+  background-color: white;
+  margin: 0;
+  width: 100%;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.transport-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  padding: 0 10px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+/* Tabla - diseño fijo como en la imagen */
+.transport-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(163, 84, 47, 0.07);
+}
+
+.transport-table th, .transport-table td {
+  padding: 0.95rem 1.1rem;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.transport-table th {
+  background: #f5e9dc;
+  color: #a3542f;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  font-size: 1.05rem;
+}
+
+.transport-table tr:hover {
+  background: #fdf6f0;
+}
+
+/* Columnas con anchos específicos como en la imagen */
+.transport-table th:nth-child(1),
+.transport-table td:nth-child(1) {
+  width: 10%;
+}
+
+.transport-table th:nth-child(2),
+.transport-table td:nth-child(2),
+.transport-table th:nth-child(3),
+.transport-table td:nth-child(3) {
+  width: 15%;
+}
+
+.transport-table th:nth-child(4),
+.transport-table td:nth-child(4),
+.transport-table th:nth-child(5),
+.transport-table td:nth-child(5) {
+  width: 12%;
+}
+
+.transport-table th:nth-child(6),
+.transport-table td:nth-child(6),
+.transport-table th:nth-child(7),
+.transport-table td:nth-child(7) {
+  width: 10%;
+}
+
+.transport-table th:nth-child(8),
+.transport-table td:nth-child(8) {
+  width: 16%;
+}
+
+/* Botones de acción */
+.btn-show-new, .btn-edit, .btn-delete {
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  margin-right: 5px;
+  font-size: 13px;
+  transition: all 0.2s;
+}
+
+.btn-show-new {
+  background-color: #1976d2;
+  color: white;
+}
+
+.btn-edit {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+.btn-delete {
+  background-color: #dc3545;
+  color: white;
+}
+
+/* Header y botones */
+.add-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.search-input {
+  padding: 8px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  min-width: 250px;
+  font-size: 14px;
+}
+* Estilos para el container principal */
+.transport-main-container {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  margin: 20px;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid #e0e0e0;
+}
+/* Título centrado */
+.transport-container-header h1 {
+  grid-column: 2; /* Coloca el título en la columna central */
+  text-align: center;
+  margin: 0;
+}
+/* Cabecera del container */
+.transport-container-header {
+  padding: 20px;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  background-color: #fafafa;
+}
+
+/* Contenedor de búsqueda (izquierda) */
+.search-container {
+  grid-column: 1;
+  justify-self: start; /* Alinea a la izquierda */
+}
+/* Input de búsqueda */
+.search-input {
+  padding: 8px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  min-width: 250px;
+  font-size: 14px;
+}
+
+/* Contenedor de la tabla */
+.transport-table-container {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* Ajustes para cuando el navbar está abierto/cerrado */
+.content {
+  padding: 0;
+  margin-left: 80px;
+  transition: margin-left 0.3s ease;
+}
+
+.content.shift {
+  margin-left: 240px;
+}
+
+/* Contenedor de búsqueda (izquierda) */
+.search-container {
+  grid-column: 1;
+  justify-self: start; /* Alinea a la izquierda */
+}
+
+/* Contenedor de botón (derecha) */
+.button-container {
+  grid-column: 3;
+  justify-self: end; /* Alinea a la derecha */
+}
+
+/* Input de búsqueda */
+.search-input {
+  padding: 8px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  min-width: 250px;
+  font-size: 14px;
+}
+.search-input {
+  flex: 1;
+  padding: 10px 15px;
+  border: 1px solid var(--light-gray);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Botón Crear Transporte */
+.add-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal {
+  background: white;
+  padding: 2rem 3rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  animation: popIn 0.4s ease-out;
+  max-width: 400px;
+  width: 90%;
+}
+/* Estilo base común */
+button.btn-ver,
+button.btn-editar,
+button.btn-eliminar {
+  padding: 6px 14px;
+  margin: 4px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+/* Verde para "Ver" */
+button.btn-ver {
+  background-color: #28a745;
+}
+button.btn-ver:hover {
+  background-color: #218838;
+  transform: scale(1.03);
+}
+
+/* Azul para "Editar" */
+button.btn-editar {
+  background-color: #007bff;
+}
+button.btn-editar:hover {
+  background-color: #0069d9;
+  transform: scale(1.03);
+}
+
+/* Rojo para "Eliminar" */
+button.btn-eliminar {
+  background-color: #dc3545;
+}
+button.btn-eliminar:hover {
+  background-color: #c82333;
+  transform: scale(1.03);
+}
+
+.modal h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.modal p {
+  font-size: 1rem;
+  color: #666;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+/* Responsive */
+@media (max-width: 768px) {
+  .transport-container-header {
+    grid-template-columns: 1fr; /* Una sola columna en móvil */
+    gap: 10px;
+  }
+  
+  .transport-container-header h1,
+  .search-container,
+  .button-container {
+    grid-column: 1;
+    justify-self: center;
+    width: 100%;
+  }
+  
+  .search-input {
+    width: 100%;
+  }
+}
+/* Media queries para responsividad */
+@media (max-width: 1200px) {
+  .transport-main-container {
+    margin: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .content, .content.shift {
+    margin-left: 0;
+  }
+  
+  .transport-container-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .transport-main-container {
+    margin: 10px;
+    border-radius: 0;
+  }
+}
+/* Responsive - priorizando la tabla */
+@media (max-width: 1200px) {
+  .content, .content.shift {
+    margin-left: 0;
+    width: 100%;
+  }
+  
+  .transport-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .transport-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .search-input {
+    width: 100%;
+    min-width: auto;
+  }
+}
+
+/* --- Botones de acción modernos --- */
+.icon-button {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+  max-width: 40px;
+  max-height: 40px;
+  padding: 0;
+  margin: 0 6px 0 0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  box-shadow: none;
+  font-size: 1.3rem;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  position: relative;
+}
+
+.icon-button .icon {
+  font-size: 1.4em;
+  margin: 0;
+}
+
+.icon-button.btn-ver {
+  background: #e0d2c1;
+  color: #a3542f;
+}
+.icon-button.btn-ver:hover, .icon-button.btn-ver:focus {
+  background: #b07156;
+  color: #fff;
+  outline: 2px solid #a3542f;
+}
+
+.icon-button.btn-editar {
+  background: #f5e9dc;
+  color: #a3542f;
+}
+.icon-button.btn-editar:hover, .icon-button.btn-editar:focus {
+  background: #e38b29;
+  color: #fff;
+  outline: 2px solid #a3542f;
+}
+
+.icon-button.btn-eliminar {
+  background: #fdecea;
+  color: #c0392b;
+}
+.icon-button.btn-eliminar:hover, .icon-button.btn-eliminar:focus {
+  background: #e57373;
+  color: #fff;
+  outline: 2px solid #c0392b;
+}
+
+.action-buttons-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* --- Buscador moderno --- */
+.search-container {
+  position: relative;
+  flex: 1;
+  min-width: 250px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 16px 12px 40px;
+  border: 1.5px solid #bbb;
+  border-radius: 6px;
+  font-size: 15px;
+  background: #fff;
+  color: #222;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  position: relative;
+  z-index: 1;
+}
+
+.search-input::placeholder {
+  color: #888;
+  opacity: 1;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #1976d2;
+  box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.13);
+  background: #fff;
+}
+
+.search-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #a3542f;
+  font-size: 1.2em;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* --- Botón Crear Transporte --- */
+.add-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s;
+}
+.add-button:hover, .add-button:focus {
+  background-color: #218838;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .search-input {
+    min-width: 100%;
+    padding-left: 40px;
+  }
+  .add-button {
+    width: 100%;
+    justify-content: center;
+  }
+  .transport-table {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .transport-table th, .transport-table td {
+    padding: 0.5rem 0.5rem;
+  }
+  .add-button {
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+}
+
+.transport-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 18px;
+  width: 100%;
+}
+
+.search-container {
+  flex: 1 1 0;
+  min-width: 220px;
+  max-width: 350px;
+  position: relative;
+}
+
+.transport-title {
+  flex: 2 1 0;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #23272f;
+  margin: 0 12px;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.header-actions {
+  flex: 1 1 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  min-width: 180px;
+}
+
+@media (max-width: 900px) {
+  .transport-header-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .transport-title {
+    text-align: center;
+    margin: 0 0 8px 0;
+    font-size: 1.3rem;
+  }
+  .header-actions {
+    justify-content: center;
+    min-width: 0;
+  }
+  .search-container {
+    max-width: 100%;
+  }
+}

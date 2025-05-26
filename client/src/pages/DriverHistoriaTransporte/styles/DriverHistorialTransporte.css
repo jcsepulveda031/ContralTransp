@@ -1,0 +1,222 @@
+/* Contenedor principal */
+.driver-historial-container {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  padding: 32px 24px 24px 24px;
+  margin: 32px auto;
+  max-width: 1200px;
+}
+.driver-historial-header h1 {
+  font-size: 2rem;
+  color: #00bfa6;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.driver-historial-table-section {
+  margin-top: 12px;
+}
+
+.search-add-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 18px;
+}
+.search-input {
+  padding: 10px 16px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s;
+  width: 320px;
+  max-width: 100%;
+}
+.search-input:focus {
+  border-color: #00bfa6;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: 12px;
+  background: #fafbfc;
+  box-shadow: 0 2px 8px rgba(0,191,166,0.04);
+}
+
+.custom-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: transparent;
+  font-size: 1rem;
+}
+.custom-table th, .custom-table td {
+  padding: 14px 12px;
+  text-align: left;
+}
+.custom-table th {
+  background: #e6f9f6;
+  color: #00bfa6;
+  font-weight: 700;
+  font-size: 1.05rem;
+  border-bottom: 2px solid #00bfa6;
+}
+.custom-table tbody tr {
+  background: #fff;
+  border-bottom: 1.5px solid #f0f0f0;
+  transition: background 0.2s;
+}
+.custom-table tbody tr:hover {
+  background: #e6f9f6;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 16px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  background: #e0f7f4;
+  color: #00bfa6;
+  text-transform: capitalize;
+}
+.status-badge.finalizado {
+  background: #e0fbe6;
+  color: #2ecc40;
+}
+.status-badge.pendiente {
+  background: #fffbe6;
+  color: #f1c40f;
+}
+.status-badge.cancelado {
+  background: #ffe6e6;
+  color: #e74c3c;
+}
+
+.action-buttons-container {
+  display: flex;
+  gap: 8px;
+}
+.button-wrapper {
+  position: relative;
+}
+.icon-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #00bfa6;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 7px 16px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(0,191,166,0.08);
+}
+.icon-button:hover {
+  background: #009e8a;
+}
+.button-label {
+  display: none;
+}
+@media (min-width: 600px) {
+  .button-label {
+    display: inline;
+  }
+}
+.tooltip {
+  display: none;
+  position: absolute;
+  top: 110%;
+  left: 0;
+  background: #222;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.button-wrapper:hover .tooltip {
+  display: block;
+  opacity: 1;
+}
+
+.no-data-message {
+  text-align: center;
+  color: #888;
+  font-size: 1.1rem;
+  margin: 24px 0;
+}
+
+.loading {
+  text-align: center;
+  color: #00bfa6;
+  font-size: 1.2rem;
+  padding: 32px 0;
+}
+
+/* Modal overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.18);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-container {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  padding: 32px 24px;
+  min-width: 320px;
+  max-width: 95vw;
+}
+.modal-header h2 {
+  color: #00bfa6;
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+}
+.modal-body h2 {
+  color: #222;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+.modal-body p {
+  color: #888;
+  font-size: 1rem;
+}
+
+@media (max-width: 700px) {
+  .driver-historial-container {
+    padding: 10px 2px;
+    margin: 10px 0;
+  }
+  .modal-container {
+    padding: 16px 6px;
+    min-width: unset;
+  }
+  .search-input {
+    width: 100%;
+  }
+}
+
+.btn-show {
+  background: #fff;
+  color: #00bfa6;
+  border: 2px solid #00bfa6;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(0,191,166,0.06);
+  transition: background 0.2s, color 0.2s, border 0.2s;
+}
+.btn-show:hover {
+  background: #00bfa6;
+  color: #fff;
+  border: 2px solid #009e8a;
+} 

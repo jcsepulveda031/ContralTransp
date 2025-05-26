@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "@ant-design/icons": "^6.0.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/material": "^7.1.0",
+    "@mui/x-data-grid": "^8.3.0",
+    "antd": "^5.25.1",
+    "react-beautiful-dnd": "^13.1.1",
+    "react-multi-select-component": "^4.3.4"
+  },
+  "devDependencies": {
+    "@types/react-beautiful-dnd": "^13.1.8",
+    "@types/three": "^0.176.0"
+  }
+}

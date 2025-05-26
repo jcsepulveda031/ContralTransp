@@ -1,0 +1,177 @@
+/* login.css optimizado y profesional */
+.login-main-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #fdfaf6;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 1.5rem;
+}
+
+.login-main-box {
+  display: flex;
+  flex-direction: row;
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  overflow: hidden;
+  width: 100%;
+  max-width: 900px;
+}
+
+.login-welcome-section {
+  background: #f5e9dc;
+  flex: 1;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.login-welcome-section h1 {
+  font-size: 2rem;
+  color: #a3542f;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+.login-welcome-section p {
+  color: #555;
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.login-form-section {
+  flex: 1;
+  padding: 3rem 2rem;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.login-form-section h1 {
+  color: #a3542f;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  position: relative;
+}
+.login-form-section h1::after {
+  content: "";
+  display: block;
+  width: 3rem;
+  height: 3px;
+  background: linear-gradient(90deg, #e38b29, #b07156);
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+
+.login-form-group {
+  margin-bottom: 1rem;
+}
+.login-form-group input {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  background: #fefefe;
+  transition: border 0.3s;
+}
+.login-form-group input:focus {
+  border-color: #d87a4a;
+  outline: 2px solid #e38b29;
+}
+button[type="submit"] {
+  margin-top: 1rem;
+  padding: 0.9rem;
+  width: 100%;
+  border: none;
+  border-radius: 0.5rem;
+  background: linear-gradient(to right, #e38b29, #a37451);
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+button[type="submit"]:hover {
+  background: linear-gradient(to right, #d67a20, #926748);
+}
+.login-form-links {
+  margin-top: 1.2rem;
+  text-align: center;
+  font-size: 0.95rem;
+}
+.login-form-links a {
+  color: #a3542f;
+  text-decoration: none;
+  margin: 0 0.5rem;
+  font-weight: 500;
+}
+.login-form-links a:hover {
+  text-decoration: underline;
+}
+.login-error-message {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #fdecea;
+  color: #c0392b;
+  border: 1px solid #f5c6cb;
+  padding: 0.7rem;
+  border-radius: 0.4rem;
+  font-size: 0.95rem;
+  margin-bottom: 1.2rem;
+}
+.login-error-message svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  fill: currentColor;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .login-main-box {
+    flex-direction: column;
+    border-radius: 0.8rem;
+  }
+  .login-welcome-section,
+  .login-form-section {
+    padding: 2rem 1rem;
+  }
+}
+@media (max-width: 600px) {
+  .login-main-container {
+    padding: 0.5rem;
+  }
+  .login-main-box {
+    border-radius: 0.5rem;
+  }
+  .login-welcome-section h1,
+  .login-form-section h1 {
+    font-size: 1.1rem;
+  }
+  .login-form-section {
+    padding: 1rem 0.5rem;
+  }
+  .login-welcome-section {
+    padding: 1rem 0.5rem;
+  }
+  .login-form-group input {
+    padding: 0.7rem 0.5rem;
+    font-size: 0.95rem;
+  }
+  button[type="submit"] {
+    padding: 0.7rem;
+    font-size: 1rem;
+  }
+  .login-form-links {
+    font-size: 0.85rem;
+  }
+  .login-error-message {
+    font-size: 0.85rem;
+    padding: 0.5rem;
+  }
+}
